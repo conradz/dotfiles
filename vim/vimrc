@@ -1,0 +1,34 @@
+set nocompatible
+filetype off
+
+" Initialize Vundle
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+Plugin 'tpope/vim-sensible'
+Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/vim-git'
+Plugin 'tpope/vim-fugitive'
+Plugin 'chriskempson/base16-vim'
+Plugin 'pangloss/vim-javascript'
+call vundle#end()
+
+filetype plugin indent on
+set shiftwidth=4
+set tabstop=4
+set expandtab
+set nobackup
+set noswapfile
+set shortmess=aI
+
+set guioptions=e
+set guifont=Input\ Mono\ 12
+set linespace=4
+set background=dark
+
+" do not throw error when base16 is not installed yet
+if filereadable(expand('$HOME/.vim/bundle/base16-vim/colors/base16-chalk.vim'))
+    colorscheme base16-chalk
+endif
+
+au BufNewFile,BufRead *.json set shiftwidth=2 tabstop=2
