@@ -1,7 +1,7 @@
 DEST := $(HOME)
-.PHONY: install bash vim vim_link vundle awesome bin bin_link nvm z
+.PHONY: install bash vim vim_link vundle awesome bin bin_link nvm z x config
 
-install: bash vim awesome bin
+install: bash vim awesome x bin config
 
 bash:
 	rm $(DEST)/.bashrc $(DEST)/.bash_profile
@@ -44,3 +44,21 @@ z:
 		&& git clone https://github.com/rupa/z.git bin/z \
 		|| true
 	(cd bin/z && git pull)
+
+x:
+	rm -f $(DEST)/.Xresources $(DEST)/.xinitrc
+	ln -s $(realpath x/resources) $(DEST)/.Xresources
+	ln -s $(realpath x/init) $(DEST)/.xinitrc
+
+config:
+	mkdir -p $(DEST)/.config
+
+	rm -f $(DEST)/.config/redshift.conf
+	ln -s $(realpath config/redshift.conf) $(DEST)/.config/redshift.conf
+
+	mkdir -p $(DEST)/.config/gtk-3.0
+	rm -f $(DEST)/.config/gtk-3.0/settings.ini
+	ln -s $(realpath config/gtk3.conf) $(DEST)/.config/gtk-3.0/settings.ini
+
+	rm -f $(DEST)/.gtkrc-2.0
+	ln -s $(realpath config/gtk2.conf) $(DEST)/.gtkrc-2.0
