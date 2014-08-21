@@ -14,7 +14,7 @@ vim_link:
 	rm -rf $(DEST)/.vim $(DEST)/.vimrc
 	# create links for vim configuration
 	ln -s $(realpath vim) $(DEST)/.vim
-	ln -s $(realpath vim/vimrc) $(DEST)/.vimrc
+	ln -s $(realpath vim/rc) $(DEST)/.vimrc
 vundle:
 	# Create the bundle folder if it doesn't exist
 	mkdir -p vim/bundle
