@@ -1,7 +1,7 @@
 DEST := $(HOME)
-.PHONY: install bash vim awesome
+.PHONY: install bash vim vim_link vundle awesome bin bin_link nvm z
 
-install: bash vim awesome
+install: bash vim awesome bin
 
 bash:
 	rm $(DEST)/.bashrc $(DEST)/.bash_profile
@@ -29,3 +29,18 @@ awesome:
 	mkdir -p $(DEST)/.config
 	rm -rf $(DEST)/.config/awesome
 	ln -s $(realpath awesome) $(DEST)/.config/awesome
+
+bin: bin_link nvm z
+bin_link:
+	rm -rf $(DEST)/.bin
+	ln -s $(realpath bin) $(DEST)/.bin
+nvm:
+	[[ ! -d bin/nvm ]] \
+		&& git clone https://github.com/creationix/nvm.git bin/nvm \
+		|| true
+	(cd bin/nvm && git pull)
+z:
+	[[ ! -d bin/z ]] \
+		&& git clone https://github.com/rupa/z.git bin/z \
+		|| true
+	(cd bin/z && git pull)

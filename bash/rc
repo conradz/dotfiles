@@ -10,8 +10,8 @@ export BROWSER=firefox
 export PATH=./node_modules/.bin:~/.bin:~/src/gocode/bin:$PATH
 export GOPATH=~/src/gocode
 
-[[ -f ~/.nvm/nvm.sh ]] && source ~/.nvm/nvm.sh
-[[ -f ~/.bin/z.sh ]] && source ~/.bin/z.sh
+[[ -f ~/.bin/nvm/nvm.sh ]] && source ~/.bin/nvm/nvm.sh
+[[ -f ~/.bin/z/z.sh ]] && source ~/.bin/z/z.sh
 
 function __prompt_command() {
 	local EXIT="$?"
