@@ -1,7 +1,12 @@
 DEST := $(HOME)
-.PHONY: install vim awesome
+.PHONY: install bash vim awesome
 
-install: vim awesome
+install: bash vim awesome
+
+bash:
+	rm $(DEST)/.bashrc $(DEST)/.bash_profile
+	ln -s $(realpath bash/rc) $(DEST)/.bashrc
+	ln -s $(realpath bash/profile) $(DEST)/.bash_profile
 
 vim: vim_link vundle
 vim_link:
