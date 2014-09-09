@@ -23,7 +23,7 @@ for s = 1, screen.count() do
         awful.widget.tasklist.filter.currenttags,
         task_buttons)
     local clock = awful.widget.textclock("   %H:%M   ")
-    local box = awful.wibox({ position = "top", screen = s })
+    local box = awful.wibox({ position = "top", screen = s, height = 24 })
 
     local left = wibox.layout.fixed.horizontal()
     left:add(tags)

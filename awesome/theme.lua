@@ -2,25 +2,42 @@
 -- Default awesome theme --
 ---------------------------
 
+local base00 = "#151515"
+local base01 = "#202020"
+local base02 = "#303030"
+local base03 = "#505050"
+local base04 = "#b0b0b0"
+local base05 = "#d0d0d0"
+local base06 = "#e0e0e0"
+local base07 = "#f5f5f5"
+local base08 = "#fb9fb1"
+local base09 = "#eda987"
+local base0A = "#ddb26f"
+local base0B = "#acc267"
+local base0C = "#12cfc0"
+local base0D = "#6fc2ef"
+local base0E = "#e1a3ee"
+local base0F = "#deaf8f"
+
 theme = {}
 
-theme.font          = "Input Sans Condensed 11"
+theme.font          = "Open Sans 11"
 
-theme.bg_normal     = "#3f51b5"
-theme.bg_focus      = "#536dfe"
-theme.bg_urgent     = "#dd191d"
-theme.bg_minimize   = "#3949ab"
-theme.bg_systray    = theme.bg_normal
+theme.bg_normal     = base00
+theme.bg_focus      = base02
+theme.bg_urgent     = base08
+theme.bg_minimize   = base01
+theme.bg_systray    = base00
 
-theme.fg_normal     = "#ffffff"
-theme.fg_focus      = "#ffffff"
-theme.fg_urgent     = "#ffffff"
-theme.fg_minimize   = "#ffffff"
+theme.fg_normal     = base07
+theme.fg_focus      = base07
+theme.fg_urgent     = base07
+theme.fg_minimize   = base07
 
 theme.border_width  = 1
-theme.border_normal = "#000000"
-theme.border_focus  = "#535d6c"
-theme.border_marked = "#91231c"
+theme.border_normal = base02
+theme.border_focus  = base03
+theme.border_marked = base09
 
 -- There are other variable sets
 -- overriding the default one when

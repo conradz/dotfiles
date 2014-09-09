@@ -42,12 +42,12 @@ local function focus_screen(s)
 end
 
 local function next_client()
-    awful.client.focus.byidx(-1)
+    awful.client.focus.byidx(1)
     if client.focus then client.focus:raise() end
 end
 
 local function prev_client()
-    awful.client.focus.byidx(1)
+    awful.client.focus.byidx(-1)
     if client.focus then client.focus:raise() end
 end
 

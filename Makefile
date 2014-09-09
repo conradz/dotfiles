@@ -62,3 +62,7 @@ config:
 
 	rm -f $(DEST)/.gtkrc-2.0
 	ln -s $(realpath config/gtk2.conf) $(DEST)/.gtkrc-2.0
+
+	mkdir -p $(DEST)/.config/fontconfig
+	rm -f $(DEST)/.config/fontconfig/fonts.conf
+	ln -s $(realpath config/fonts.conf) $(DEST)/.config/fontconfig/fonts.conf

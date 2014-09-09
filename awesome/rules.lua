@@ -16,6 +16,7 @@ awful.rules.rules = {
             raise = true,
             keys = client_keys,
             buttons = awful.util.table.join(
+                awful.button({ }, 1, function(c) client.focus = c; c:raise() end),
                 awful.button({ "Mod4" }, 1, awful.mouse.client.move),
                 awful.button({ "Mod4" }, 3, awful.mouse.client.resize))
         }
