@@ -11,7 +11,7 @@ endif
 install: $(TARGETS)
 
 bash:
-	rm $(DEST)/.bashrc $(DEST)/.bash_profile
+	rm -f $(DEST)/.bashrc $(DEST)/.bash_profile
 	ln -s $(realpath bash/rc) $(DEST)/.bashrc
 	ln -s $(realpath bash/profile) $(DEST)/.bash_profile
 
@@ -26,7 +26,7 @@ vundle:
 	# Create the bundle folder if it doesn't exist
 	mkdir -p vim/bundle
 	# Checkout vundle source
-	[[ ! -d vim/bundle/Vundle.vim ]] \
+	test ! -d vim/bundle/Vundle.vim \
 		&& git clone https://github.com/gmarik/Vundle.vim.git vim/bundle/Vundle.vim \
 		|| true
 	# Install all vim plugins
@@ -42,12 +42,12 @@ bin_link:
 	rm -rf $(DEST)/.bin
 	ln -s $(realpath bin) $(DEST)/.bin
 nvm:
-	[[ ! -d bin/nvm ]] \
+	test ! -d bin/nvm \
 		&& git clone https://github.com/creationix/nvm.git bin/nvm \
 		|| true
 	(cd bin/nvm && git pull)
 z:
-	[[ ! -d bin/z ]] \
+	test ! -d bin/z \
 		&& git clone https://github.com/rupa/z.git bin/z \
 		|| true
 	(cd bin/z && git pull)
