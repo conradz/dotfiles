@@ -30,3 +30,6 @@ set background=dark
 if filereadable(expand('$HOME/.vim/bundle/base16-vim/colors/base16-chalk.vim'))
     colorscheme base16-chalk
 endif
+
+highlight StatusLine ctermbg=7 ctermfg=0
+highlight StatusLineNC ctermbg=8 ctermfg=0
