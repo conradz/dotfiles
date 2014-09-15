@@ -4,9 +4,9 @@ local gears = require("gears")
 
 local pictures = "/home/conrad/Pictures/"
 local backgrounds = {
-    pictures .. "background-1.jpg",
-    pictures .. "background-2.jpg",
-    pictures .. "background-3.jpg",
+    pictures .. "background-1.png",
+    pictures .. "background-2.png",
+    pictures .. "background-3.png",
     pictures .. "background-3.jpg"
 }
 
