@@ -1,7 +1,14 @@
 DEST := $(HOME)
 .PHONY: install bash vim vim_link vundle awesome bin bin_link nvm z x config
 
-install: bash vim awesome x bin config
+TARGETS := bash vim vim_link vundle awesome bin bin_link nvm z x config
+
+ifeq ($(HOSTNAME), dev.conradz.com)
+	# headless
+	TARGETS := bash vim vim_link vundle bin bin_link nvm z config
+endif
+
+install: $(TARGETS)
 
 bash:
 	rm $(DEST)/.bashrc $(DEST)/.bash_profile
